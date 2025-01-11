@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Secure Notes</title>
+    <link href="/css/style.css" rel="stylesheet">
+  </head>
+  <body class="bg-slate-100">
+    <h1 class="text-slate-800 text-4xl mx-auto text-center size-fit">Secure Notes App</h1>
+
+    <textarea id="note" rows="5" cols="50" class="border rounded-lg mx-auto"></textarea>
+
+    <button type="button" class="text-xl border focus:ring-blue-500 rounded-lg" onclick="hashClick()">Create Note</button>
+
+    <script>
+      /** @type {HTMLTextArea} noteArea */
+      const noteArea = document.getElementById("note");
+      noteArea.value = window.location.pathname.split('/').findLast(() => {return true});
+
+      if (window.location.hash === "") {
+        encrypt();
+      } else {
+        decrypt();
+      }
+
+      function decrypt() {
+        console.info("decrypt");
+      }
+
+      function encrypt() {
+        console.info("encrypt");
+      }
+      
+      function hashClick() {
+        noteArea.value = window.location.hash;
+      }
+    </script>
+  </body>
+</html>
