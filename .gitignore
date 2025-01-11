@@ -1,2 +1,2 @@
 node_modules
-./site/css/style.css
+./site/css/*.css
